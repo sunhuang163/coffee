@@ -8,7 +8,7 @@ import json
 from host import host
 def getPagecontent(username,password,fullpath):
 	#driver = webdriver.Firefox(timeout=30)
-	#driver = webdriver.PhantomJS("D:\\app\\phantomjs-2.1.1-windows\\bin\\phantomjs.exe")
+	
 	driver = webdriver.PhantomJS("phantomjs.exe")
 	driver.set_window_size(1280, 800)
 	driver.get("http://m.coffeeji.cn/space.php?do=login")
