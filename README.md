@@ -4,8 +4,9 @@
   https://www.python.org/ftp/python/3.5.2/python-3.5.2.exe
 
 - pip  安装如下
-  pip install selenium 
-  pip install bs4
+  > pip install selenium 
+  
+  > pip install bs4
 
 - 下载 
   git clone https://github.com/sunhuang163/coffee.git
