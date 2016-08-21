@@ -16,8 +16,10 @@
 - 执行 python mzh.py
 - 打开画面调试
   安装firefox 47.01 , 不能是最新版
+  
   ```
   driver = webdriver.Firefox(timeout=30)
   #driver = webdriver.PhantomJS("phantomjs.exe") 
+
   ```
 
