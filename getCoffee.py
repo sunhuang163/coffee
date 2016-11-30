@@ -8,6 +8,12 @@ import time,datetime
 import json
 import os
 
+def get_form_hash():
+	url="http://m.coffeeji.cn"
+	body=requests.get(url).content
+	value= BeautifulSoup(body,"html5lib").find("input")['value']
+	return value
+
 def filepath():
 	today=datetime.date.today()
 	year =today.year 
@@ -21,18 +27,19 @@ def filepath():
 		return fullpath
 
 
+form_hash=get_form_hash()
 sessions = requests.session()
 
 number =10 #修改机器总数
 post_info={
-	'formhash':'0a19233e',
+	'formhash':form_hash,
 	'username':'',  
 	'password':'',
 	'loginsubmit':'登陆'
 
 }
 content = sessions.post('http://m.coffeeji.cn/space.php?do=login',data=post_info)
-time.sleep(20)
+time.sleep(30)
 for i in range(1,number):  
 	body=sessions.get('http://m.coffeeji.cn/space.php?do=extension&op=getSaleCup&cid=%d'%i)
 	path =filepath()
@@ -43,6 +50,8 @@ for i in range(1,number):
 	
 
 	time.sleep(10)
+
+
 
 
 
